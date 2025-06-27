@@ -1,8 +1,7 @@
 const CONTAINER_WIDTH = 500;
 
 
-function buildGrid() {
-    let gridSize = 16;
+function buildGrid(gridSize) {
     let gridContainer = document.querySelector(".gridContainer");
     let cellSize = CONTAINER_WIDTH / gridSize;
     console.log(cellSize);
@@ -13,9 +12,14 @@ function buildGrid() {
         gridBox.classList.toggle("gridElement");
         gridBox.style.width = cellSize + "px";
         gridBox.style.height = cellSize + "px";
+        gridBox.addEventListener("mouseenter", colorCell);
         
         gridContainer.appendChild(gridBox);
     }
 }
 
-buildGrid();
+function colorCell(e) {
+    e.target.style.backgroundColor = "black";
+}
+
+buildGrid(32);
