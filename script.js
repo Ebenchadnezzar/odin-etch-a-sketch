@@ -36,7 +36,18 @@ function buildGrid(gridSize) {
 }
 
 function colorCell(e) {
-    e.target.style.backgroundColor = "black";
+    let oldCol = e.target.style.backgroundColor;
+
+    if (!oldCol) {
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        e.target.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+        e.target.style.opacity = 1;
+    }
+    else {
+        e.target.style.opacity -= 0.1;
+    }
 }
 
 onStart();

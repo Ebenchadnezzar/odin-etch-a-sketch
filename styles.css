@@ -21,9 +21,12 @@ body {
     border-width: 5px;
     border-color: black;
     border-style: dashed;
+    background-color: black;
 }
 
 .gridElement {
     margin: 0;
     padding: 0;
+    background-color: white;
+    opacity: 1;
 }
