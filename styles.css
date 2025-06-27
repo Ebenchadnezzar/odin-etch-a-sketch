@@ -11,6 +11,9 @@ body {
 .resizeButton {
     width: 100px;
     height: 60px;
+    margin: 32px;
+    border: none;
+    border-radius: 16px;
 }
 
 .gridContainer {

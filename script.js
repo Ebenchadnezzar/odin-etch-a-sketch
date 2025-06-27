@@ -22,7 +22,6 @@ function buildGrid(gridSize) {
 
     let gridContainer = document.querySelector(".gridContainer");
     let cellSize = CONTAINER_WIDTH / gridSize;
-    console.log("cell size: " + cellSize + "\ngridSize: " + gridSize);
     
     let numGridBox = gridSize ** 2;
     for (let i = 0; i < numGridBox; ++i) {
