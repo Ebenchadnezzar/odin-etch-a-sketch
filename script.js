@@ -18,6 +18,7 @@ function onStart() {
 function buildGrid(gridSize) {
     // Handle null value
     gridSize = gridSize || 32;  // (|| chooses first truthy value)
+    gridSize = Math.min(Math.max(gridSize, 1), 100);
 
     let gridContainer = document.querySelector(".gridContainer");
     let cellSize = CONTAINER_WIDTH / gridSize;
