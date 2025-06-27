@@ -1,10 +1,27 @@
 const CONTAINER_WIDTH = 500;
 
+function onStart() {
+    buildGrid(32);
+
+    // Setup the resize button
+    let resizeButton = document.querySelector(".resizeButton");
+    resizeButton.addEventListener("click", () => {
+        // Clear old grid
+        let gridContainer = document.querySelector(".gridContainer");
+        gridContainer.innerHTML = '';
+
+        // Build new grid
+        buildGrid(prompt("New Canvas Size:", 32));
+    })
+}
 
 function buildGrid(gridSize) {
+    // Handle null value
+    gridSize = gridSize || 32;  // (|| chooses first truthy value)
+
     let gridContainer = document.querySelector(".gridContainer");
     let cellSize = CONTAINER_WIDTH / gridSize;
-    console.log(cellSize);
+    console.log("cell size: " + cellSize + "\ngridSize: " + gridSize);
     
     let numGridBox = gridSize ** 2;
     for (let i = 0; i < numGridBox; ++i) {
@@ -22,4 +39,4 @@ function colorCell(e) {
     e.target.style.backgroundColor = "black";
 }
 
-buildGrid(32);
+onStart();
